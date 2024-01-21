@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+
+<body>
+    <!--   Big container   -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- Wizard container -->
+                <div class="wizard-container">
+                    <div class="card wizard-card" data-color="red" id="wizard">
+                        <form method="post" id="myForm">
+                            <div class="wizard-header">
+                                <h3 class="wizard-title">
+                                    Register a Hostel/Room
+                                </h3>
+                                <h5>Enter the details to host your hostel</h5>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+                                    <li><a href="#details" data-toggle="tab">Personal Details</a></li>
+                                    <li><a href="#StayDetails" data-toggle="tab">Stay Details</a></li>
+                                    <li><a href="#StayAddress" data-toggle="tab">Stay Address</a></li>
+                                    <li><a href="#description" data-toggle="tab">Declaration</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane" id="details">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4 class="info-text"> Let's start with the basic details.</h4>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">First Name</label>
+                                                    <input name="fname" type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Date of birth</label>
+                                                    <input name="dob" type="text" id="doba" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Phone Number</label>
+                                                    <input name="phno" type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Last Name</label>
+                                                    <input name="lname" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Email</label>
+                                                    <input name="mail" type="text" class="form-control">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="StayDetails">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4 class="info-text">Stay Details.</h4>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Stay Name</label>
+                                                    <input name="sname" id="sname" type="text" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Person(s) per room</label>
+                                                    <input name="ppr" id="ppr" type="number" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Attached Washroom</label>
+                                                    <select class="form-control" id="Atw" required>
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="Yes"> Yes </option>
+                                                        <option value="No"> No </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Stay Type</label>
+                                                    <select class="form-control" id="stayType" required>
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="CollegeHostel"> College Hostel </option>
+                                                        <option value="OutsideHostel"> Outside Hostel </option>
+                                                        <option value="Room"> Room </option>
+                                                        <option value="flatHouse">Flat/House</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">24*7 availability of Water</label>
+                                                    <select class="form-control" id="water" required>
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="Yes"> Yes </option>
+                                                        <option value="No"> No </option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Price per month</label>
+                                                    <input name="ppm" id="amount" type="number" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane" id="StayAddress">
+                                    <h4 class="info-text">Address of Stay</h4>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- <fieldset> -->
+                                            <legend>Address</legend>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Landmark</label>
+                                                <input name="landmark" id="landmark" type="text" class="form-control"
+                                                    required>
+                                            </div>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Latitude</label>
+                                                <input name="Latitude" id="lati" type="text" class="form-control"
+                                                    required>
+                                            </div>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Longitute</label>
+                                                <input name="Longitute" id="longi" type="text" class="form-control"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">City/Village</label>
+                                                <input name="city" id="city" type="text" class="form-control" required>
+                                            </div>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Pincode</label>
+                                                <input name="pincode" id="pcode" type="text" class="form-control"
+                                                    required>
+                                            </div>
+                                            <!-- </fieldset> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane" id="description">
+                                    <div class="row">
+                                        <h4 class="info-text"> Declaration </h4>
+
+
+
+                                        <p>
+                                            By submitting this form I, hereby declare and confirm that all the details
+                                            provided
+                                            regarding the hostel I am hosting are accurate and true to the best
+                                            of my knowledge. I understand the importance of providing correct
+                                            information for the convenience and safety of the guests.
+
+                                            The details submitted include information about the hostel's
+                                            location, amenities, rules, and any other relevant details. I assure
+                                            that I will promptly update the information in case of any changes,
+                                            ensuring that guests receive the most accurate and up-to-date
+                                            details.
+
+                                            I acknowledge that providing false or misleading information may
+                                            have legal consequences and could negatively impact the experience
+                                            of the guests. By making this declaration, I take full
+                                            responsibility for the accuracy of the provided hostel details.
+
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wizard-footer">
+                                <div class="pull-right">
+                                    <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next'
+                                        value='Next' />
+                                    <input type='submit' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish'
+                                        value='Finish' />
+                                </div>
+                                <div class="pull-left">
+                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd'
+                                        name='previous' value='Previous' />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- wizard container -->
+            </div>
+        </div> <!-- row -->
+    </div> <!--  big container -->
+
+    <script src="./index.js"></script>
+    <script src="index2.js" type="module"></script>
+
+</body>
+
+</html>
